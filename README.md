@@ -7,7 +7,7 @@
 https://speakerdeck.com/mapconcierge4agu/earthga-ban-hua-sita-di-tu-tairunoima
 
 
-## 技術年表(作成中)
+## 地図タイル技術年表(作成中)
 https://github.com/furuhashilab/LearnMapTiles/blob/main/docs/chronologicaltable.md
 
 ## References
