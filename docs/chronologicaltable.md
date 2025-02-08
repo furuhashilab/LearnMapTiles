@@ -1,4 +1,4 @@
-# タイムライン：Google の地図タイル配信技術、電子国土Webシステム、及びオープンソース FOSS4G ツールの進化（2000–2025） v0.85
+# タイムライン：Google の地図タイル配信技術、電子国土Webシステム、及びオープンソース FOSS4G ツールの進化（2000–2025） v0.86
 ChatGTP o3-mini と対話しながら修正しているため、すべての内容のエビデンスチェックまで終わっていません。ハルシネーションが起きている可能性がありますのでご注意ください。裏トリ完了後は v1.0 とする予定です。追記提案はプルリクしてください。
 
 | 年           | 主な技術の進化・出来事とオープンソース・コミュニティとの関連・影響 |
@@ -13,10 +13,10 @@ ChatGTP o3-mini と対話しながら修正しているため、すべての内�
 | **2012**     | - **次世代タイル技術の研究開始:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Google が HTML5 や WebGL を活用したベクトルタイル技術の開発に本格着手。<br>- **tilemill の登場:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Mapbox によるオープンソース地図デザインツール tilemill が発表。<br>→ Google の動的レンダリングの概念（スタイル変更、拡大縮小時の滑らかさ）に触発され、ユーザーが自由に地図スタイルを設計できるツールとして注目される。 |
 | **2013** | - **ベクトルタイルと動的スタイリングの採用:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Google Mapsで本格的にベクトルタイルレンダリングを導入。<br>- **API の進化:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Google Maps API にも動的スタイリングが取り入れられる。 <br>- **地理院地図のウェブメルカトル対応:** <br>&nbsp;&nbsp;&nbsp;&nbsp;2013年から、国土地理院は Google Maps の XYZ 地図タイル仕様を採用したウェブメルカトル方式で地理院地図の公開を開始。<br>&nbsp;&nbsp;&nbsp;&nbsp;これにより、国内の公共地図サービスが商用サービスや FOSS4G ツールと互換性のある形式で提供されるようになった。<br>→ この革新が、オープンソースツールにおける柔軟な描画技術の発展に影響。 |
 | **2014** | - **Mapbox Vector Tile仕様公開:** <br>&nbsp;&nbsp;&nbsp;&nbsp;[Mapbox Vector Tile Specification v1.0.0 公開](https://github.com/mapbox/vector-tile-spec)。<br>&nbsp;&nbsp;&nbsp;&nbsp;これにより、ベクトルタイル技術の標準仕様が一般化した。<br> |
-| **2015**     | - **Google Maps オフライン対応:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Google はオフラインマップ機能を発表。<br>- **グローバル CDN とキャッシュ戦略の高度化:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Google は世界中で低遅延配信を実現するため、CDN の最適活用やキャッシュ技術の進展を図る。<br>→ FOSS4G ツールも同様の高速応答や動的レンダリング手法を模索するようになる。 |
+| **2015**     | - **Mapbox GL JS公開:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Mapbox はオープンソースAPIとして Mapbox Vector Tile に最適化した Mapbox GL JS を発表。<br>→ ベクトルタイル技術のOSS化が加速する。 |
 | **2016**     | - **マシンラーニングとエッジコンピューティングの活用:** <br>&nbsp;&nbsp;&nbsp;&nbsp;タイルのプリフェッチや需要予測に機械学習を応用し、効率的なデータ配信を追求。<br>- **tippecanoe の登場:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Mapbox が大規模地理空間データから効率的にベクトルタイルセットを生成するツール tippecanoe をリリース。<br>- **Mapbox GL JS のリリース:** <br>&nbsp;&nbsp;&nbsp;&nbsp;WebGL を用いた高速・インタラクティブなベクトル地図ライブラリとして登場。<br>→ 各社のベクトルタイル戦略と WebGL 利用の成功例が、オープンソースコミュニティ内での技術発展を後押し。 |
 | **2017–2018** | - **リアルタイムデータ連携:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Google はリアルタイム交通情報を強化。<br>→ これに刺激され、OpenLayers や Leaflet などがオフラインキャッシュや動的データ更新への対応を進展。 |
-| **2019**     | - **技術的最適化の深化:** <br>&nbsp;&nbsp;&nbsp;&nbsp;データ圧縮、WebGL のさらなる最適化、プログレッシブローディングなどにより、タイル配信とユーザー体験が向上。<br>→ この進展が、軽量かつ高速なマッピングライブラリ設計の共通思想に影響。 |
+| **2019**     | - **地理院地図ベクター試験公開:** <br>&nbsp;&nbsp;&nbsp;&nbsp;国土地理院が Mapbox Vector Tile をベースにベクトルタイルの試験配信を地理院地図ベクターとして開始。 |
 | **2020**     | - **パンデミック対応と拡張機能:** <br>&nbsp;&nbsp;&nbsp;&nbsp;COVID‑19 による利用急増に対応し、Google はサーバースケーラビリティやキャッシュ技術を強化。<br>- **MapLibre GL JS の誕生:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Mapbox GL JS のライセンス変更を受け、コミュニティ主導でフォークされた MapLibre GL JS が登場。<br>→ Google の取り組みや Mapbox 系ツールの進化が、オープンソースエコシステムに革新をもたらす。 |
 | **2021**     | - **Google Earth Web タイルオーバーレイ対応:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Google Earth Web プロジェクト機能にタイルURLを記述することで、XYZタイル画像のインポートが可能となる。<br>- **[Protomapsが地図タイルコンテナPMTiles公開](https://github.com/protomaps/PMTiles/commits/main/?since=2021-10-01&until=2021-10-31):** <br>&nbsp;&nbsp;&nbsp;&nbsp;Protomapsがベクトルタイルなどをクラウドオプティマイズした形でコンテナ化するPMTilesを公開。|
 | **2023** | - **Google Photorealistic 3D Tiles 公開:** <br>&nbsp;&nbsp;&nbsp;&nbsp;GoogleはCesium社と共同で、Google Earth用の3Dジオメトリデータを3DTiles形式で外部プラットフォームにも公開する Google Photorealistic 3D Tilesサービスを公開。Google製品以外のプラットフォームとの連携を強化。<br>→ Google の成功事例は、FOSS4G 全体の設計思想や技術選択（タイル方式、WebGL、ベクトルタイル、キャッシュ戦略等）の基準となり、今後もエコシステムに大きな影響を与え続ける。 |
