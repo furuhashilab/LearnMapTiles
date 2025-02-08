@@ -1,4 +1,4 @@
-# タイムライン：Google の地図タイル配信技術、電子国土Webシステム、及びオープンソース FOSS4G ツールの進化（2000–2025） v0.92
+# タイムライン：Google の地図タイル配信技術、電子国土Webシステム、及びオープンソース FOSS4G ツールの進化（2000–2025） v0.93
 ChatGTP o3-mini と対話しながら修正しているため、すべての内容のエビデンスチェックまで終わっていません。ハルシネーションが起きている可能性がありますのでご注意ください。裏トリ完了後は v1.0 とする予定です。追記提案はプルリクしてください。
 
 | 年           | 主な技術の進化・出来事とオープンソース・コミュニティとの関連・影響 |
@@ -10,7 +10,7 @@ ChatGTP o3-mini と対話しながら修正しているため、すべての内�
 | **2007–2008** | - **gdal2tiles 開発:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Google Summer of Code 2007, 2008 にて Masaryk University in Brno の学生だった Klokan Petr Přidal(現 MapTiler Founder & CEO) が、GDAL に含まれるツールとして、ラスターデータを地図タイルに変換する gdal2tiles をOSSとして開発・注目され、Google のXYZタイル方式がオープンソースコミュニティに広がる。  |
 | **2010** | - **Google Mapsベクトルタイル化:** <br>&nbsp;&nbsp;&nbsp;&nbsp;AndroidクライアントアプリでGoogle Mapsのベクトルタイル配信開始。但し、デスクトップ版は2013年から。<br>- **高速・スケーラブルな配信と動的更新:** <br>&nbsp;&nbsp;&nbsp;&nbsp;サーバー最適化、キャッシュ戦略の洗練により、Google Maps Navigation などでリアルタイム交通情報やルート案内が実現。<br>→ この動向が「動的でリアルタイムな地図表現」の必要性をオープンソースコミュニティに認識させる契機となる。 |
 | **2011**     | - **LeafletJS の登場:** <br>&nbsp;&nbsp;&nbsp;&nbsp;軽量でモバイルフレンドリーなインタラクティブ地図ライブラリとして LeafletJS がリリース。<br>→ Google Maps の使いやすさやタイル配信方式を受け継ぎ、シンプルかつ効率的な設計が評価される。LeafletJS開発者の Volodymyr Agafonkin 氏はその後 Mapbox に移籍して Mapbox Vector Tile の実装に関わる。 |
-| **2012**     | - **次世代タイル技術の研究開始:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Google が HTML5 や WebGL を活用したベクトルタイル技術の開発に本格着手。<br>- **tilemill の登場:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Mapbox によるオープンソース地図デザインツール tilemill が発表。<br>→ Google の動的レンダリングの概念（スタイル変更、拡大縮小時の滑らかさ）に触発され、ユーザーが自由に地図スタイルを設計できるツールとして注目される。 |
+| **2012**     | - **tilemill の登場:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Mapbox によるオープンソース地図デザインツール tilemill が発表。<br>→ Google の動的レンダリングの概念（スタイル変更、拡大縮小時の滑らかさ）に触発され、ユーザーが自由に地図スタイルを設計できるツールとして注目される。 |
 | **2013** | - **ベクトルタイルと動的スタイリングの採用:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Google Mapsで本格的にベクトルタイルレンダリングを導入。<br>- **API の進化:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Google Maps API にも動的スタイリングが取り入れられる。 <br>- **地理院地図公開:** <br>&nbsp;&nbsp;&nbsp;&nbsp;2013年から、国土地理院は Google Maps の XYZ 地図タイル仕様を採用したウェブメルカトル方式で地理院地図の公開を開始。<br>&nbsp;&nbsp;&nbsp;&nbsp;これにより、国内の公共地図サービスが商用サービスや FOSS4G ツールと互換性のある形式で提供されるようになった。<br>→ この革新が、オープンソースツールにおける柔軟な描画技術の発展に影響。 |
 | **2014** | - **Mapbox Vector Tile仕様公開:** <br>&nbsp;&nbsp;&nbsp;&nbsp;[Mapbox Vector Tile Specification v1.0.0 公開](https://github.com/mapbox/vector-tile-spec)。<br>&nbsp;&nbsp;&nbsp;&nbsp;これにより、ベクトルタイル技術の標準仕様が一般化した。<br> |
 | **2015**     | - **Mapbox GL JS公開:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Mapbox はオープンソースAPIとして Mapbox Vector Tile に最適化した Mapbox GL JS を発表。<br>→ ベクトルタイル技術のOSS化が加速する。 |
