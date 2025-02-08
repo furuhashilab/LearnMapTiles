@@ -1,4 +1,4 @@
-# タイムライン：Google の地図タイル配信技術、電子国土Webシステム、及びオープンソース FOSS4G ツールの進化（2000–2025） v0.93
+# タイムライン：Google の地図タイル配信技術、電子国土Webシステム、及びオープンソース FOSS4G ツールの進化（2000–2025） v0.94
 ChatGTP o3-mini と対話しながら修正しているため、すべての内容のエビデンスチェックまで終わっていません。ハルシネーションが起きている可能性がありますのでご注意ください。裏トリ完了後は v1.0 とする予定です。追記提案はプルリクしてください。
 
 | 年           | 主な技術の進化・出来事とオープンソース・コミュニティとの関連・影響 |
@@ -15,7 +15,6 @@ ChatGTP o3-mini と対話しながら修正しているため、すべての内�
 | **2014** | - **Mapbox Vector Tile仕様公開:** <br>&nbsp;&nbsp;&nbsp;&nbsp;[Mapbox Vector Tile Specification v1.0.0 公開](https://github.com/mapbox/vector-tile-spec)。<br>&nbsp;&nbsp;&nbsp;&nbsp;これにより、ベクトルタイル技術の標準仕様が一般化した。<br> |
 | **2015**     | - **Mapbox GL JS公開:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Mapbox はオープンソースAPIとして Mapbox Vector Tile に最適化した Mapbox GL JS を発表。<br>→ ベクトルタイル技術のOSS化が加速する。 |
 | **2016**     | - **tippecanoe の登場:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Mapbox が大規模地理空間データから効率的にベクトルタイルセットを生成するツール tippecanoe をリリース。<br>- **Mapbox GL JS のリリース:** <br>&nbsp;&nbsp;&nbsp;&nbsp;WebGL を用いた高速・インタラクティブなベクトル地図ライブラリとして登場。<br>→ 各社のベクトルタイル戦略と WebGL 利用の成功例が、オープンソースコミュニティ内での技術発展を後押し。 |
-| **2017–2018** | - **リアルタイムデータ連携:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Google はリアルタイム交通情報を強化。<br>→ これに刺激され、OpenLayers や Leaflet などがオフラインキャッシュや動的データ更新への対応を進展。 |
 | **2019**     | - **地理院地図ベクター試験公開:** <br>&nbsp;&nbsp;&nbsp;&nbsp;国土地理院が Mapbox Vector Tile をベースにベクトルタイルの試験配信を地理院地図ベクターとして開始。 |
 | **2020**     | - **[国連OpenGIS Initiative がベクトルタイル技術試験運用開始](https://github.com/unvt):** <br>&nbsp;&nbsp;&nbsp;&nbsp;国連 OpenGIS Initiative が業務で利用可能なベクトルタイル技術の試験運用(UNVT - United Nations Vector Tile Toolkit)を開始。<br>- **MapLibre GL JS の誕生:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Mapbox GL JS のライセンス変更を受け、コミュニティ主導でフォークされた MapLibre GL JS が登場。<br>→ Google の取り組みや Mapbox 系ツールの進化が、オープンソースエコシステムに革新をもたらす。 |
 | **2021**     | - **Google Earth Web タイルオーバーレイ対応:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Google Earth Web プロジェクト機能にタイルURLを記述することで、XYZタイル画像のインポートが可能となる。<br>- **[Protomapsが地図タイルコンテナPMTiles公開](https://github.com/protomaps/PMTiles/commits/main/?since=2021-10-01&until=2021-10-31):** <br>&nbsp;&nbsp;&nbsp;&nbsp;Protomapsがベクトルタイルなどをクラウドオプティマイズした形でコンテナ化するPMTilesを公開。|
