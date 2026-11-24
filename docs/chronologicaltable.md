@@ -1,4 +1,4 @@
-# 地図タイル技術年表 v0.96
+# 地図タイル技術年表 v0.97
 ChatGTP o3-mini と対話しながら修正しているため、すべての内容のエビデンスチェックまで終わっていません。ハルシネーションが起きている可能性がありますのでご注意ください。裏トリ完了後は v1.0 とする予定です。追記提案はプルリクお願いいたします。
 
 | 年           | 主な技術の進化・出来事とオープンソース・コミュニティとの関連・影響 |
@@ -15,8 +15,9 @@ ChatGTP o3-mini と対話しながら修正しているため、すべての内�
 | **2014** | - **Mapbox Vector Tile仕様公開:** <br>&nbsp;&nbsp;&nbsp;&nbsp;[Mapbox Vector Tile Specification v1.0.0 公開](https://github.com/mapbox/vector-tile-spec)。<br>&nbsp;&nbsp;&nbsp;&nbsp;これにより、ベクトルタイル技術の標準仕様が一般化した。<br> |
 | **2015**     | - **tippecanoe の登場:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Mapbox が大規模地理空間データから効率的にベクトルタイルセットを生成するツール tippecanoe をリリース。<br>→ ベクトルタイル技術のOSS化が加速する。 |
 | **2016**     | <br>- **Mapbox GL JS のリリース:** <br>&nbsp;&nbsp;&nbsp;&nbsp;WebGL を用いた高速・インタラクティブなベクトル地図ライブラリとして登場。<br>→ 各社のベクトルタイル戦略と WebGL 利用の成功例が、オープンソースコミュニティ内での技術発展を後押し。<br>- **[Mapbox Terrain-RGB 公開](https://medium.com/mapbox/global-elevation-data-6689f1d0ba65)(2016年10月27日):** <br>&nbsp;&nbsp;&nbsp;&nbsp;標高値を PNG の RGB に埋め込む全球の標高ラスタタイルセット。標高 = -10000 + (R×256² + G×256 + B)×0.1(0.1 m 刻み)。Mapbox GL JS の 3D 地形・陰影起伏の基盤となる(2021年12月以降、標高データの更新は後継の Terrain-DEM に集約)。<br>- **Mapzen Terrain Tiles / Terrarium 形式の公開(2016年頃・要確認):** <br>&nbsp;&nbsp;&nbsp;&nbsp;Mapzen が Joerd で生成する標高タイル「Terrain Tiles」を 1.0 として提供。PNG に標高を埋め込む **Terrarium** 形式(標高 = R×256 + G + B/256 - 32768)を採用。Mapzen 終了後も AWS Open Data として継続し、Tangram や MapLibre GL JS(`encoding: "terrarium"`)で利用される。 |
+| **2017**     | - **[国土地理院 標高タイル(PNG)の採用・提供](https://www.gsj.jp/en/research/topics/nr20170428.html)(2017年3月頃・日付要確認):** <br>&nbsp;&nbsp;&nbsp;&nbsp;標高値を 24bit PNG の RGB に格納する「PNG 標高タイル」(分解能 0.01 m、無効値は (R,G,B)=(128,0,0)、標高 = (R×2¹⁶ + G×2⁸ + B)×0.01)を国土地理院が地理院タイルとして提供。産総研(西岡芳晴氏ら)が開発した形式で、産総研の2017年4月28日付の発表で地理院での採用に言及。DEM10B(10m)などが配信され、Terrain-RGB / Terrarium とは式が異なる。 |
 | **2019**     | - **地理院地図ベクター試験公開:** <br>&nbsp;&nbsp;&nbsp;&nbsp;国土地理院が Mapbox Vector Tile をベースにベクトルタイルの試験配信を地理院地図ベクターとして開始。 |
-| **2020**     | - **[国連OpenGIS Initiative がベクトルタイル技術試験運用開始](https://github.com/unvt):** <br>&nbsp;&nbsp;&nbsp;&nbsp;国連 OpenGIS Initiative が業務で利用可能なベクトルタイル技術の試験運用(UNVT - United Nations Vector Tile Toolkit)を開始。<br>- **MapLibre GL JS のフォーク(2020年12月頃):** <br>&nbsp;&nbsp;&nbsp;&nbsp;Mapbox GL JS v2 が非オープンライセンスとなったことを受け、v1.13 系列からコミュニティが MapLibre GL JS をフォーク。以後、オープンなベクトルタイル描画の中心的存在となる。<br>- **国土地理院 標高タイル(PNG)の整備・公開(2020年頃・要確認):** <br>&nbsp;&nbsp;&nbsp;&nbsp;標高値を 24bit PNG の RGB に格納する「PNG 標高タイル」(分解能 0.01 m、無効値は (R,G,B)=(128,0,0)、標高 = (R×2¹⁶ + G×2⁸ + B)×0.01)。全国 10m メッシュ(DEM10B)などが配信され、産総研のリリース(2020年10月)でも地理院の PNG 標高タイル公開に言及。Terrain-RGB / Terrarium とは式が異なる。 |
+| **2020**     | - **[国連OpenGIS Initiative がベクトルタイル技術試験運用開始](https://github.com/unvt):** <br>&nbsp;&nbsp;&nbsp;&nbsp;国連 OpenGIS Initiative が業務で利用可能なベクトルタイル技術の試験運用(UNVT - United Nations Vector Tile Toolkit)を開始。<br>- **MapLibre GL JS のフォーク(2020年12月頃):** <br>&nbsp;&nbsp;&nbsp;&nbsp;Mapbox GL JS v2 が非オープンライセンスとなったことを受け、v1.13 系列からコミュニティが MapLibre GL JS をフォーク。以後、オープンなベクトルタイル描画の中心的存在となる。 |
 | **2021**     | - **Google Earth Web タイルオーバーレイ対応:** <br>&nbsp;&nbsp;&nbsp;&nbsp;Google Earth Web プロジェクト機能にタイルURLを記述することで、XYZタイル画像のインポートが可能となる。<br>- **[Protomapsが地図タイルコンテナPMTiles公開](https://github.com/protomaps/PMTiles/commits/main/?since=2021-10-01&until=2021-10-31):** <br>&nbsp;&nbsp;&nbsp;&nbsp;Protomapsがベクトルタイルなどをクラウドオプティマイズした形でコンテナ化するPMTilesを公開。|
 | **2023** | - **Google Photorealistic 3D Tiles 公開:** <br>&nbsp;&nbsp;&nbsp;&nbsp;GoogleはCesium社と共同で、Google Earth用の3Dジオメトリデータを3DTiles形式で外部プラットフォームにも公開する Google Photorealistic 3D Tilesサービスを公開。Google製品以外のプラットフォームとの連携を強化。<br>→ Google の成功事例は、FOSS4G 全体の設計思想や技術選択（タイル方式、WebGL、ベクトルタイル、キャッシュ戦略等）の基準となり、今後もエコシステムに大きな影響を与え続ける。 |
 | **2024** | - **経済産業省 空間ID 仕様公開:** <br>&nbsp;&nbsp;&nbsp;&nbsp;経済産業省とデジタル庁は Ouranos Ecosystem(ウラノス・エコシステム）4次元時空間情報基盤の基礎技術として３次元空間ID(空間ボクセル)の仕様を公開。XYZタイルとの互換性を持ち、三次元空間へと拡張した地図タイルの応用事例。<br>
@@ -41,7 +42,7 @@ ChatGTP o3-mini と対話しながら修正しているため、すべての内�
   Google Maps により確立されたタイル配信方式、動的レンダリング、ベクトルタイル技術は、オープンソースコミュニティでも共通の設計思想となった。<br>
   その結果、OpenLayers、Leaflet、tilemill、tippecanoe、Mapbox GL JS、MapLibre GL JS などのツールが、高品質で柔軟な地図サービス構築の基盤として発展している。
 
-- **標高ラスタ3タイプの比較(年表の2016年・2020年の項目を参照):** <br>
+- **標高ラスタ3タイプの比較(年表の2016年・2017年の項目を参照):** <br>
   Web 地図で 3D 地形・陰影起伏・等高線を描くための「標高ラスタ(raster-dem)」には、主に次の3種のエンコーディングがある。MapLibre GL JS では `raster-dem` ソースの `encoding` で指定する(`mapbox` / `terrarium` / 一部バージョンでカスタム)。
 
   | タイプ | 提供元・例 | 標高の計算式 | 特徴 |
